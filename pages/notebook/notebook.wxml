@@ -1,0 +1,30 @@
+<!-- pages/notebook/notebook.wxml -->
+<button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo">
+    获取头像昵称
+</button>
+<block wx:else>
+    <view id="todoapp">
+        <view class="header">
+            <view id="head-view">
+                <text id="head">记事本</text>
+            </view>
+            <l-input l-class="input" bind:linconfirm="add" value="{{inputValue}}" clear="{{true}}" hide-label="{{true}}" placeholder="请输入便条内容" placeholder-style="font-size:50rpx;font-weight:100" />
+            <l-toast show="{{isEmpty}}" title="输入不能为空"></l-toast>
+            <l-toast show="{{isMax}}" title="最大输入长度为15"></l-toast>
+        </view>
+        <view class="li-item" wx:for="{{list}}" wx:key="index">
+            <view class="li-view">
+                <text class="li-text">{{index+1}}. {{item}}</text>
+            </view>
+            <view bind:tap="del" class="delete-button" data-id="{{index}}">
+                <l-icon name="delete" size="60" />
+            </view>
+        </view>
+        <view class="footer-view">
+            <text id="left-text">{{list.length}} items left</text>
+            <l-button bind:lintap="clear" type="warning" size="large" disabled="{{proh}}" l-class="clear-button">
+                <text id="clear-text">清空</text>
+            </l-button>
+        </view>
+    </view>
+</block>

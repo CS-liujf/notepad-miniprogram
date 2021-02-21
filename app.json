@@ -1,0 +1,21 @@
+{
+  "pages":[
+    "pages/notebook/notebook",
+    "pages/index/index",
+    "pages/logs/logs"
+  ],
+  "window":{
+    "backgroundTextStyle":"light",
+    "navigationBarBackgroundColor": "#fff",
+    "navigationBarTitleText": "fly",
+    "navigationBarTextStyle":"black"
+  },
+  "style": "v2",
+  "sitemapLocation": "sitemap.json",
+  "usingComponents": {
+    "l-button":"/dist/button/index",
+    "l-toast":"/dist/toast/index",
+    "l-input":"/dist/input/index",
+    "l-icon":"/dist/icon/index"
+  }
+}
